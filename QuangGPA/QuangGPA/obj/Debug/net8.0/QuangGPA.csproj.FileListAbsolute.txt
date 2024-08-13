@@ -1,0 +1,17 @@
+D:\HUST\QuangGpa\QuangGPA\QuangGPA\bin\Debug\net8.0\QuangGPA.exe
+D:\HUST\QuangGpa\QuangGPA\QuangGPA\bin\Debug\net8.0\QuangGPA.deps.json
+D:\HUST\QuangGpa\QuangGPA\QuangGPA\bin\Debug\net8.0\QuangGPA.runtimeconfig.json
+D:\HUST\QuangGpa\QuangGPA\QuangGPA\bin\Debug\net8.0\QuangGPA.dll
+D:\HUST\QuangGpa\QuangGPA\QuangGPA\bin\Debug\net8.0\QuangGPA.pdb
+D:\HUST\QuangGpa\QuangGPA\QuangGPA\obj\Debug\net8.0\QuangGPA.GeneratedMSBuildEditorConfig.editorconfig
+D:\HUST\QuangGpa\QuangGPA\QuangGPA\obj\Debug\net8.0\QuangGPA.AssemblyInfoInputs.cache
+D:\HUST\QuangGpa\QuangGPA\QuangGPA\obj\Debug\net8.0\QuangGPA.AssemblyInfo.cs
+D:\HUST\QuangGpa\QuangGPA\QuangGPA\obj\Debug\net8.0\QuangGPA.csproj.CoreCompileInputs.cache
+D:\HUST\QuangGpa\QuangGPA\QuangGPA\obj\Debug\net8.0\QuangGPA.dll
+D:\HUST\QuangGpa\QuangGPA\QuangGPA\obj\Debug\net8.0\refint\QuangGPA.dll
+D:\HUST\QuangGpa\QuangGPA\QuangGPA\obj\Debug\net8.0\QuangGPA.pdb
+D:\HUST\QuangGpa\QuangGPA\QuangGPA\obj\Debug\net8.0\QuangGPA.genruntimeconfig.cache
+D:\HUST\QuangGpa\QuangGPA\QuangGPA\obj\Debug\net8.0\ref\QuangGPA.dll
+D:\HUST\QuangGpa\QuangGPA\QuangGPA\bin\Debug\net8.0\CsvHelper.dll
+D:\HUST\QuangGpa\QuangGPA\QuangGPA\obj\Debug\net8.0\QuangGPA.csproj.AssemblyReference.cache
+D:\HUST\QuangGpa\QuangGPA\QuangGPA\obj\Debug\net8.0\QuangGPA.csproj.Up2Date
