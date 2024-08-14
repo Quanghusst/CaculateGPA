@@ -1,85 +1,139 @@
-﻿using System;
-using System.Globalization;
-using System.IO;
-using CsvHelper;
-using CsvHelper.Configuration;
-using QuangGPA;
+﻿/*using System;
 
-double CalculateGPA(List<Subject> subjects, string hocKy = null)
+class Program
 {
-    int tongTin = 0;
-    double cpa = 0;
-    if (hocKy == null)
+    static void Main()
     {
-        foreach (var subject in subjects)
+                    Console.OutputEncoding = System.Text.Encoding.UTF8;
+
+        // Tiêu đề bảng
+        string[] headers = { "STT", "Họ Tên", "Tuổi", "Điểm" };
+
+        // Dữ liệu bảng
+        string[,] data = {
+            { "1", "Anh Vu", "29", "9.5" },
+            { "2", "Saori Hara", "20", "8.5" },
+            { "3", "Doremon", "30", "5" },
+            { "4", "Duong Qua", "45", "6" },
+            { "5", "Obama", "59", "9.5" }
+        };
+
+        // Chiều rộng cột
+        int[] colWidths = { 5, 12, 6, 6 };
+
+        // In dòng tiêu đề
+        PrintLine(colWidths);
+        PrintRow(headers, colWidths);
+        PrintLine(colWidths);
+
+        // In các dòng dữ liệu
+        for (int i = 0; i < data.GetLength(0); i++)
         {
-            tongTin += subject.TinChi;
-            cpa += subject.DiemSo * subject.TinChi;
+            string[] row = new string[data.GetLength(1)];
+            for (int j = 0; j < data.GetLength(1); j++)
+            {
+                row[j] = data[i, j];
+            }
+            PrintRow(row, colWidths);
         }
-    }
-    else
-    {
-        // Lọc các môn học theo hocKy
-        var subjectKy = subjects.Where(subject => subject.HocKy == hocKy).ToList();
-        foreach (var subject in subjectKy)
-        {
-            tongTin += subject.TinChi;
-            cpa += subject.DiemSo * subject.TinChi;
-        }
+        PrintLine(colWidths);
     }
 
-    return cpa / tongTin;
+    static void PrintLine(int[] colWidths)
+    {
+        Console.Write("+");
+        foreach (int width in colWidths)
+        {
+            Console.Write(new string('-', width) + "+");
+        }
+        Console.WriteLine();
+    }
+
+    static void PrintRow(string[] columns, int[] colWidths)
+    {
+        Console.Write("|");
+        for (int i = 0; i < columns.Length; i++)
+        {
+            Console.Write(columns[i].PadRight(colWidths[i]) + "|");
+        }
+        Console.WriteLine();
 }
-Console.OutputEncoding = System.Text.Encoding.UTF8;
-string path = @"data.csv";
+}
+*/
 
+using System;
 
-using (var reader = new StreamReader(path)) // tạo 1 người reader
-using (var csv = new CsvReader(reader, new CsvConfiguration(CultureInfo.InvariantCulture)
+namespace QuangGPA
 {
-    HasHeaderRecord = true
-}))
-{
-    var subjects = csv.GetRecords<Subject>().ToList(); // chuyển kiểu thành tolist cho dễ 
-
-
-    // Tính CPA 
-    Console.WriteLine("CPA: " + CalculateGPA(subjects));
-    Console.WriteLine("=================================");
-    // Tính GPA cho từng học kỳ chỉ một lần
-    var gpaBySemester = new Dictionary<string, double>();
-
-    foreach (var subject in subjects)
+    class Program
     {
-        if (!gpaBySemester.ContainsKey(subject.HocKy))
+        static void PrintLine(int[] colWidths)
         {
-            gpaBySemester[subject.HocKy] = CalculateGPA(subjects, subject.HocKy);
+            Console.Write("+");
+            foreach (int width in colWidths)
+            {
+                Console.Write(new string('-', width) + "+");
+            }
+            Console.WriteLine();
+        }
+        static void PrintRow(string[] columns, int[] colWidths)
+        {
+            Console.Write("|");
+            for (int i = 0; i < columns.Length; i++)
+            {
+                string cell = " " + columns[i] + " "; // Thêm dấu cách trước và sau giá trị
+                Console.Write(cell.PadRight(colWidths[i]) + "|");
+            }
+            Console.WriteLine();
+        }
+
+        static void Main(string[] args)
+        {
+            Console.OutputEncoding = System.Text.Encoding.UTF8;
+
+            var quang = Quang.Instance;
+            int totalCredits = 0;
+            string[] headers = { "Semester", "Total credit", "GPA" };
+            int[] colWidths = { 10, 15, 23 };
+
+            PrintLine(colWidths);
+            PrintRow(headers, colWidths);
+            PrintLine(colWidths);
+
+            foreach (var kvp in quang.GPABySemester)
+            {
+                totalCredits += quang.TotalCreditsBySemester[kvp.Key];
+                string[] row = { kvp.Key, quang.TotalCreditsBySemester[kvp.Key].ToString(), kvp.Value.ToString() };
+                PrintRow(row, colWidths);
+                PrintLine(colWidths);
+            }
+            string[] footer = { "TOTAL", totalCredits.ToString() , ""};
+            PrintRow(footer, colWidths);
+            PrintLine(colWidths);
+
+            Console.WriteLine();
+            Console.WriteLine("CPA: " + quang.CPA);
+            Console.ReadKey();
         }
     }
-
-    // In kết quả
-    foreach (var kvp in gpaBySemester)
-    {
-        Console.WriteLine("GPA " + kvp.Key + ": " + kvp.Value);
-    }
-    Console.ReadKey();
-    /*  Code JavaScript lấy dữ liệu từ bảng HTML
-     function tableToCSV() {
-    const table = document.getElementById('ctl00_ctl00_contentPane_MainPanel_MainContent_gvCourseMarks_DXMainTable');
-    let csv = [];
-    for (let row of table.rows) {
-        let rowData = [];
-        for (let cell of row.cells) {
-            rowData.push(cell.innerText);
-        }
-        csv.push(rowData.join(','));
-    }
-    return csv.join('\n');
 }
 
-// Gọi hàm và hiển thị kết quả trong console
-console.log(tableToCSV());
-     */
 
 
-}
+//    /*  Code JavaScript lấy dữ liệu từ bảng HTML
+//     function tableToCSV() {
+//    const table = document.getElementById('ctl00_ctl00_contentPane_MainPanel_MainContent_gvCourseMarks_DXMainTable');
+//    let csv = [];
+//    for (let row of table.rows) {
+//        let rowData = [];
+//        for (let cell of row.cells) {
+//            rowData.push(cell.innerText);
+//        }
+//        csv.push(rowData.join(','));
+//    }
+//    return csv.join('\n');
+//}
+
+//// Gọi hàm và hiển thị kết quả trong console
+//console.log(tableToCSV());
+//     */

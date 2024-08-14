@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("QuangGPA")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+21eb819d80cc0a1c5f1b9669d1ccf30fd48cc21b")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0")]
 [assembly: System.Reflection.AssemblyProductAttribute("QuangGPA")]
 [assembly: System.Reflection.AssemblyTitleAttribute("QuangGPA")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

@@ -58,11 +58,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\ledan\\Source\\Repos\\CaculateGPA\\QuangGPA\\QuangGPA\\QuangGPA.csproj",
+      "projectUniqueName": "D:\\HUST\\QuangGpa\\QuangGPA\\QuangGPA\\QuangGPA.csproj",
       "projectName": "QuangGPA",
-      "projectPath": "C:\\Users\\ledan\\Source\\Repos\\CaculateGPA\\QuangGPA\\QuangGPA\\QuangGPA.csproj",
+      "projectPath": "D:\\HUST\\QuangGpa\\QuangGPA\\QuangGPA\\QuangGPA.csproj",
       "packagesPath": "C:\\Users\\ledan\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\ledan\\Source\\Repos\\CaculateGPA\\QuangGPA\\QuangGPA\\obj\\",
+      "outputPath": "D:\\HUST\\QuangGpa\\QuangGPA\\QuangGPA\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\ledan\\AppData\\Roaming\\NuGet\\NuGet.Config",
