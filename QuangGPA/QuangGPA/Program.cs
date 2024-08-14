@@ -5,11 +5,11 @@ using CsvHelper;
 using CsvHelper.Configuration;
 using QuangGPA;
 
-double CalculateGPA(List<Subject> subjects, string hocKy = " ")
+double CalculateGPA(List<Subject> subjects, string hocKy = null)
 {
     int tongTin = 0;
     double cpa = 0;
-    if (hocKy == " ")
+    if (hocKy == null)
     {
         foreach (var subject in subjects)
         {
@@ -20,7 +20,7 @@ double CalculateGPA(List<Subject> subjects, string hocKy = " ")
     else
     {
         // Lọc các môn học theo hocKy
-        var subjectKy = subjects.Where(subject => subject.Hocky == hocKy).ToList();
+        var subjectKy = subjects.Where(subject => subject.HocKy == hocKy).ToList();
         foreach (var subject in subjectKy)
         {
             tongTin += subject.TinChi;
@@ -51,9 +51,9 @@ using (var csv = new CsvReader(reader, new CsvConfiguration(CultureInfo.Invarian
 
     foreach (var subject in subjects)
     {
-        if (!gpaBySemester.ContainsKey(subject.Hocky))
+        if (!gpaBySemester.ContainsKey(subject.HocKy))
         {
-            gpaBySemester[subject.Hocky] = CalculateGPA(subjects, subject.Hocky);
+            gpaBySemester[subject.HocKy] = CalculateGPA(subjects, subject.HocKy);
         }
     }
 

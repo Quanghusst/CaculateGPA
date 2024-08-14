@@ -9,7 +9,7 @@ namespace QuangGPA
 {
     internal class Subject
     {
-        public string Hocky { get; set; }
+        public string HocKy { get; set; }
         public string MaHP { get; set; }
         public string TenHP { get; set; }
         public int TinChi { get; set; }

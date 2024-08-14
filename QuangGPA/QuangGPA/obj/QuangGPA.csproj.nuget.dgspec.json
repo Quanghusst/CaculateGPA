@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "D:\\HUST\\QuangGpa\\QuangGPA\\QuangGPA\\QuangGPA.csproj": {}
+    "C:\\Users\\ledan\\Source\\Repos\\CaculateGPA\\QuangGPA\\QuangGPA\\QuangGPA.csproj": {}
   },
   "projects": {
-    "D:\\HUST\\QuangGpa\\QuangGPA\\QuangGPA\\QuangGPA.csproj": {
+    "C:\\Users\\ledan\\Source\\Repos\\CaculateGPA\\QuangGPA\\QuangGPA\\QuangGPA.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\HUST\\QuangGpa\\QuangGPA\\QuangGPA\\QuangGPA.csproj",
+        "projectUniqueName": "C:\\Users\\ledan\\Source\\Repos\\CaculateGPA\\QuangGPA\\QuangGPA\\QuangGPA.csproj",
         "projectName": "QuangGPA",
-        "projectPath": "D:\\HUST\\QuangGpa\\QuangGPA\\QuangGPA\\QuangGPA.csproj",
+        "projectPath": "C:\\Users\\ledan\\Source\\Repos\\CaculateGPA\\QuangGPA\\QuangGPA\\QuangGPA.csproj",
         "packagesPath": "C:\\Users\\ledan\\.nuget\\packages\\",
-        "outputPath": "D:\\HUST\\QuangGpa\\QuangGPA\\QuangGPA\\obj\\",
+        "outputPath": "C:\\Users\\ledan\\Source\\Repos\\CaculateGPA\\QuangGPA\\QuangGPA\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\ledan\\AppData\\Roaming\\NuGet\\NuGet.Config",
